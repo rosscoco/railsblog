@@ -3,3 +3,5 @@
 <p><strong><%= @article.title %></strong></p>
 <h2>Text:</h2>
 <p><strong><%= @article.body %></strong></p>
+<%= link_to "delete", article_path(@article), method: :delete, data:{confirm:"Really Delete?"} %>
+<%= link_to "edit", edit_article_path(@article)%>
