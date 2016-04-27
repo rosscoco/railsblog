@@ -34,8 +34,6 @@ class ArticlesController < ApplicationController
 		flash.notice = "Article #{@article.title} updated!"
 
 		redirect_to article_path( @article )
-
-
 	end
 
 	def show
@@ -50,6 +48,7 @@ class ArticlesController < ApplicationController
 		redirect_to articles_path
 
 	end
+
 
 	private 
 		def find_article

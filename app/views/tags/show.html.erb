@@ -1,0 +1,10 @@
+<h1>Articles Tagged with: <%= @tag.name %></h1>
+<li>
+	<% @tag.articles.each do |a| %>	
+	<ul>
+		<%= link_to a.title, article_path(a) %>
+	</ul>
+	<% end %>
+	<%= link_to "<< All Tags", tags_path %>
+</li>
+	

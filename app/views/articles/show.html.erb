@@ -1,8 +1,17 @@
 <h1>Article</h1>
+<% if @article.image.exists? %>
+	<%= image_tag @article.image.url %>
+<% end %>
 <h2>Title:</h2>
 <p><strong><%= @article.title %></strong></p>
 <h2>Text:</h2>
 <p><strong><%= @article.body %></strong></p>
+<p>
+	<h3>Tags:</h3>
+	<% @article.tags.each do |tag| %>
+	<%= link_to tag.name, tag_path(tag) %>
+	<% end %>
+</p>
 <h3>Comments (<%= @article.comments.size %>)</h3>
 <%= render partial: "articles/comment", collection: @article.comments %>
 <%= render partial: 'comments/form' %>
